@@ -1,18 +1,31 @@
 import java.util.Scanner;
 
 public class ATM {
+    public static int saldo = 1200000;
+    public static boolean cancel = false;
+    public static boolean reload_1 = false;
+    public static boolean reload_2 = false;
+    public static boolean reload_3 = false;
+    public static boolean ulangi = false;
+    public static boolean kembali = false;
+
+    static void setor(){
+        Scanner input = new Scanner(System.in);
+        Integer setor = input.nextInt();
+        if (setor >= 20000) {
+            saldo = saldo + setor;
+            ulangi = false;
+            System.out.println("Saldo anda sekarang Rp" + saldo);
+            kembali = true;
+        } else {
+            System.out.println("Masukkan nominal minimal Rp20.000");
+            ulangi = true;
+        }
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("ATM Bank ABC");
-
-        int saldo = 1200000;
-
-        boolean cancel = false;
-        boolean reload_1 = false;
-        boolean reload_2 = false;
-        boolean reload_3 = false;
-        boolean ulangisetor = false;
-        boolean kembali = false;
 
         do {
             System.out.println("Gunakan angka 1 atau 2 untuk memilih setor atau tarik tunai, 0 untuk batal");
@@ -21,18 +34,8 @@ public class ATM {
             if (pilihan == 1) {
                 System.out.println("Masukkan jumlah uang yang ingin anda setor:");
                 do {
-                    ulangisetor = false;
-                    Integer setor = input.nextInt();
-                    if (setor >= 20000) {
-                        saldo = saldo + setor;
-                        ulangisetor = false;
-                        System.out.println("Saldo anda sekarang Rp" + saldo);
-                        kembali = true;
-                    } else {
-                        System.out.println("Masukkan nominal minimal Rp20.000");
-                        ulangisetor = true;
-                    }
-                } while (ulangisetor == true);
+                    setor();
+                } while (ulangi == true);
 
             } else if (pilihan == 2) {
                 do {
