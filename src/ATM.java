@@ -6,10 +6,10 @@ public class ATM {
     public static boolean reload_1 = false;
     public static boolean reload_2 = false;
     public static boolean reload_3 = false;
-    public static boolean ulangi = false;
+/*    public static boolean ulangi = false;*/
     public static boolean kembali = false;
 
-    static void setor(){
+   /* static void setor(){
         Scanner input = new Scanner(System.in);
         Integer setor = input.nextInt();
         if (setor >= 20000) {
@@ -20,6 +20,19 @@ public class ATM {
         } else {
             System.out.println("Masukkan nominal minimal Rp20.000");
             ulangi = true;
+        }
+    }
+*/
+    static void setor(){
+        Scanner input = new Scanner(System.in);
+        Integer setor = input.nextInt();
+        if (setor >= 20000) {
+            saldo = saldo + setor;
+            System.out.println("Saldo anda sekarang Rp" + saldo);
+            kembali = true;
+        } else {
+            System.out.println("Masukkan nominal minimal Rp20.000");
+            setor();
         }
     }
 
@@ -33,9 +46,9 @@ public class ATM {
 
             if (pilihan == 1) {
                 System.out.println("Masukkan jumlah uang yang ingin anda setor:");
-                do {
+              /*  do {*/
                     setor();
-                } while (ulangi == true);
+   /*             } while (ulangi == true);*/
 
             } else if (pilihan == 2) {
                 do {
