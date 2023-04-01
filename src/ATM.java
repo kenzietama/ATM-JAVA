@@ -7,7 +7,6 @@ public class ATM {
     public static boolean reload_1 = false;
     public static boolean reload_2 = false;
     public static boolean reload_3 = false;
-/*    public static boolean ulangi = false;*/
     public static boolean kembali = false;
     static String terimakasih() {
         return "Terimakasih telah menggunakan layanan kami!";
@@ -64,27 +63,11 @@ public class ATM {
                                                 }
                                                 saldo = saldo - uang;
                                                 method.transaksilagi();
-                                                /*do {
-                                                    reload_3 = false;
-                                                    System.out.println("Transaksi lagi?");
-                                                    System.out.println("Y/N");
-                                                    String confirm_2 = input.next();
-                                                    if (confirm_2.equals("Y") || confirm_2.equals("y")) {
-                                                        *//*method.tariktunai();*//*
-                                                        kembali = true;
-                                                    } else if (confirm_2.equals("N") || confirm_2.equals("n")) {
-                                                        terimakasih();
-                                                    } else {
-                                                        reload_3 = true;
-                                                    }
-                                                } while (reload_3 == true);*/
 
                                             } else if (mod != 0) {
                                                 System.out.println("Mohon masukkan jumlah uang kelipatan Rp" + nominal[objectATM.id_uang - 1] + " saja.");
                                                 reload_2 = true;
                                             }
-
-
                                         }
 
                                         //saldo kurang
