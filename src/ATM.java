@@ -9,6 +9,9 @@ public class ATM {
     public static boolean reload_3 = false;
 /*    public static boolean ulangi = false;*/
     public static boolean kembali = false;
+static String terimakasih() {
+return "Terimakasih telah menggunakan layanan kami!";
+}
 
     public static void main(String[] args) {
         objectATM method  = new objectATM();
@@ -106,6 +109,7 @@ public class ATM {
                 kembali = true;
             }
         } while (kembali == true);
-
+        
+        terimakasih();
     }
 }
