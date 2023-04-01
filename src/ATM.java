@@ -24,7 +24,7 @@ public class ATM {
                 System.out.println("Masukkan jumlah uang yang ingin anda setor:");
                 method.setor();
             } else if (pilihan == 2) {
-                /*do {*/
+                /*do {*/method.tariktunai();
 
                     if (objectATM.id_uang == 0) {
 
