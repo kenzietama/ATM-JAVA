@@ -14,9 +14,12 @@ public class ATM {
         objectATM method  = new objectATM();
 
         Scanner input = new Scanner(System.in);
-        System.out.println("ATM Bank ABC");
 
         do {
+            System.out.println("ATM Bank ABC");
+            System.out.println("1. Setor tunai");
+            System.out.println("2. Tarik tunai");
+            System.out.println("0. Batal");
             System.out.println("Gunakan angka 1 atau 2 untuk memilih setor atau tarik tunai, 0 untuk batal");
             Integer pilihan = input.nextInt();
 
