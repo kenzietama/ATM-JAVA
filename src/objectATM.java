@@ -29,6 +29,7 @@ setor();
         //pilih pecahan uang
         System.out.println("Gunakan angka (1-3) untuk memilih denominasi uang, 0 untuk membatalkan");
         id_uang = masuk.nextInt();
+        ATM.cancel = true;
     }
 
 }

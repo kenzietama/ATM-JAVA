@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ATM {
     public static int saldo = 1200000;
     public  static Integer[] nominal = {20000, 50000, 100000};
- /*   public static boolean cancel = false;*/
+    public static boolean cancel = false;
     public static boolean reload_1 = false;
     public static boolean reload_2 = false;
     public static boolean reload_3 = false;
@@ -24,8 +24,9 @@ public class ATM {
                 System.out.println("Masukkan jumlah uang yang ingin anda setor:");
                 method.setor();
             } else if (pilihan == 2) {
-                /*do {*/method.tariktunai();
-
+                method.tariktunai();
+                cancel = false;
+                do {
                     if (objectATM.id_uang == 0) {
 
                     } else if (objectATM.id_uang > 0 && objectATM.id_uang <= 3) {
@@ -61,7 +62,7 @@ public class ATM {
                                                 System.out.println("Y/N");
                                                 String confirm_2 = input.next();
                                                 if (confirm_2.equals("Y") || confirm_2.equals("y")) {
-                                                    /*cancel = true;*/
+                                                    method.tariktunai();
                                                 } else if (confirm_2.equals("N") || confirm_2.equals("n")) {
 
                                                 } else {
@@ -80,23 +81,23 @@ public class ATM {
                                     //saldo kurang
                                     else {
                                         System.out.println("Maaf saldo anda tidak cukup");
-                                        /*cancel = true;*/
+                                        method.tariktunai();
                                     }
                                 } while (reload_2 == true);
                             }
 
                             //batal
                             else if (confirm_1.equals("N") || confirm_1.equals("n")) {
-                               /* cancel = true;*/
+                                method.tariktunai();
                             } else {
                                 reload_1 = true;
                             }
                         } while (reload_1 == true);
                     } else {
                         System.out.println("Pilihan anda tidak terdaftar");
-                        /*cancel = true;*/
+                        method.tariktunai();
                     }
-              /*  } while (cancel == true);*/
+                } while (cancel == true);
 
             } else if (pilihan == 0) {
                 System.out.println("Terimakasih telah menggunakan layanan kami");
