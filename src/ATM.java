@@ -22,7 +22,7 @@ public class ATM {
 
             if (pilihan == 1) {
                 System.out.println("Masukkan jumlah uang yang ingin anda setor:");
-                    method.setor();
+                method.setor();
             } else if (pilihan == 2) {
                 /*do {*/
 
