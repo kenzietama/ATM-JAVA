@@ -31,7 +31,7 @@ public class objectATM {
         id_uang = masuk.nextInt();
         ATM.cancel = true;
     }
-    public void transaksilagi() {
+    public void transaksilagi(String layanan2) {
         do {
             Scanner in = new Scanner(System.in);
             ATM.reload_3 = false;
@@ -41,11 +41,15 @@ public class objectATM {
             if (confirm_2.equals("Y") || confirm_2.equals("y")) {
                 ATM.kembali = true;
             } else if (confirm_2.equals("N") || confirm_2.equals("n")) {
-                System.out.println(ATM.terimakasih());
+                System.out.println(ATM.terimakasih(layanan2));
+                /*break;*/
+                /*ATM.kembali = false;
+                break;*/
                 ATM.kembali = false;
             } else {
                 ATM.reload_3 = true;
             }
+            ATM.cancel = false;
         } while (ATM.reload_3 == true);
     }
 }

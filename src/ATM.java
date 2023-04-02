@@ -8,8 +8,8 @@ public class ATM {
     public static boolean reload_2 = false;
     public static boolean reload_3 = false;
     public static boolean kembali = false;
-    static String terimakasih() {
-        return "Terimakasih telah menggunakan layanan kami!";
+    static String terimakasih(String layanan) {
+        return "Terimakasih telah menggunakan layanan " + layanan + " kami!";
     }
 
     public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class ATM {
                 if (pilihan == 1) {
                     System.out.println("Masukkan jumlah uang yang ingin anda setor:");
                     method.setor();
-                    method.transaksilagi();
+                    method.transaksilagi("setor tunai");
                 } else if (pilihan == 2) {
                     method.tariktunai();
                     cancel = false;
@@ -62,7 +62,7 @@ public class ATM {
                                                     System.out.println("Rp" + nominal[objectATM.id_uang - 1]);
                                                 }
                                                 saldo = saldo - uang;
-                                                method.transaksilagi();
+                                                method.transaksilagi("tarik tunai");
 
                                             } else if (mod != 0) {
                                                 System.out.println("Mohon masukkan jumlah uang kelipatan Rp" + nominal[objectATM.id_uang - 1] + " saja.");
