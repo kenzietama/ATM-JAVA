@@ -9,7 +9,6 @@ public class objectATM {
         if (setor >= 20000) {
         ATM.saldo = ATM.saldo + setor;
         System.out.println("Saldo anda sekarang Rp" + ATM.saldo);
-        /*ATM.kembali = true;*/
         } else {
         System.out.println("Masukkan nominal minimal Rp20000");
         setor();
@@ -42,9 +41,6 @@ public class objectATM {
                 ATM.kembali = true;
             } else if (confirm_2.equals("N") || confirm_2.equals("n")) {
                 System.out.println(ATM.terimakasih(layanan2));
-                /*break;*/
-                /*ATM.kembali = false;
-                break;*/
                 ATM.kembali = false;
             } else {
                 ATM.reload_3 = true;
